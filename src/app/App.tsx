@@ -1,11 +1,29 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import {Hello} from './components/Hello';
+import routes from './routes/Routes';
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import { connect } from 'react-redux';
 
-declare let module: any;
+import Home from "./components/pages/home/Home";
+import navbar from "./components/common/Navbar";
+import Login from "./components/pages/login/Login";
+import Register from "./components/pages/register/Register";
+import WidgetContainer from "./containers/pages/widget/Widget";
 
-ReactDOM.render(<Hello compiler="Typescript" framework="React..." bundler="Webpack"/>,
-    document.getElementById('root'));
-if (module.hot) {
-  module.hot.accept();
-}
+
+const App = () => {
+  return (
+      <Router>
+        <div>
+          {navbar}
+          <hr/>
+          
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/login" component={Login}/>
+          <Route exact path="/register" component={Register}/>
+          <Route exact path="/widget" component={WidgetContainer}/>
+        </div>
+      </Router>
+  );
+};
+
+export default connect()(App);
