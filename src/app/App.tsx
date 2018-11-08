@@ -3,11 +3,11 @@ import routes from './routes/Routes';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { connect } from 'react-redux';
 
-import Home from "./components/pages/home/Home";
-import navbar from "./components/common/Navbar";
-import Login from "./components/pages/login/Login";
-import Register from "./components/pages/register/Register";
-import WidgetContainer from "./containers/pages/widget/Widget";
+import HomeComponent from "./components/pages/home/HomeComponent";
+import navbar from "./components/common/NavBar";
+import LoginComponent from "./components/pages/login/LoginComponent";
+import RegisterComponent from "./components/pages/register/RegisterComponent";
+import WidgetContainer from "./containers/pages/widget/WidgetContainer";
 
 
 const App = () => {
@@ -17,9 +17,9 @@ const App = () => {
           {navbar}
           <hr/>
           
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/register" component={Register}/>
+          <Route exact path="/" component={HomeComponent}/>
+          <Route exact path="/login" component={LoginComponent}/>
+          <Route exact path="/register" component={RegisterComponent}/>
           <Route exact path="/widget" component={WidgetContainer}/>
         </div>
       </Router>

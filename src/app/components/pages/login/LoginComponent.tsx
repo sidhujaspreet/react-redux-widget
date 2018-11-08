@@ -1,15 +1,15 @@
 import * as React from 'react';
 import {Link} from "react-router-dom";
 
-class Register extends React.Component<{}> {
+class LoginComponent extends React.Component<{}> {
   render() {
     return (
         <div>
-          <h1>This is Register Page</h1>
+          <h1>This is Login Page</h1>
           <button><Link to="/">Home</Link></button>
         </div>
     );
   }
 }
 
-export default Register;
+export default LoginComponent;

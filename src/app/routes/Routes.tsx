@@ -1,13 +1,13 @@
 import React from 'react';
 import {Route, Switch} from 'react-router';
-import Home from '../components/pages/home/Home';
-// import Login from '../components/pages/login/Login'
-// import Home from '../components/pages/home/Home'
+import HomeComponent from '../components/pages/home/HomeComponent';
+// import LoginComponent from '../components/pages/login/LoginComponent'
+// import HomeComponent from '../components/pages/home/HomeComponent'
 
 const routes = () => {
   return (
       <Route>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={HomeComponent}/>
       </Route>
   );
 };
