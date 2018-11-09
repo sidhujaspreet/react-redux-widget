@@ -1,4 +1,5 @@
 import * as React from "react";
+import './WidgetComponent.scss';
 
 class WidgetComponent extends React.Component<any, any> {
   
@@ -14,15 +15,17 @@ class WidgetComponent extends React.Component<any, any> {
     this.props.fetchWeatherData();
   }
   
-  async componentDidMount() {
-    // this.setState({data: json});
-  }
-  
   render() {
     return (
-        <div>
-          <button onClick={this.getData}>Get Data</button>
-          {JSON.stringify(this.props.data)}
+        <div className="container">
+          <div className="row">
+            <div className="col-2">
+              <button type="button" className="get-data-btn btn btn-light" onClick={this.getData}>Get Data</button>
+            </div>
+            <div className="col-10 render-data">
+              {JSON.stringify(this.props.data)}
+            </div>
+          </div>
         </div>
     );
   }

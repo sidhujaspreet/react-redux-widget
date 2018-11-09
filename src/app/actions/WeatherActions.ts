@@ -21,9 +21,11 @@ const fetchWeatherDataFailure = (error: any) => {
   }
 };
 
-export async function fetchWeatherData(dispatch: any) {
+export function fetchWeatherData(dispatch: any) {
+  const corsProxy = `https://cors-anywhere.herokuapp.com/`,
+      url = `https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=b6907d289e10d714a6e88b30761fae22`;
   dispatch(fetchingWeatherDataAction());
-  fetch(`https://jsonplaceholder.typicode.com/todos/1`)
+  fetch(corsProxy + url)
       .then(response => response.json())
       .then(json => dispatch(fetchWeatherDataSuccess(json)))
       .catch(error => fetchWeatherDataFailure(error));
