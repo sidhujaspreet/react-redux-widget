@@ -5,7 +5,7 @@ class HomeComponent extends React.Component<{}> {
   render() {
     return (
         <div className="home-wrapper">
-          <h1>This is Home Page</h1>
+          <h5>This page is here only to test routing. You should better switch to 'Widget' in order to get weather data.. ;)</h5>
         </div>
     );
   }

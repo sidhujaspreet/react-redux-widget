@@ -4,8 +4,7 @@ export const FETCH_WEATHER_DATA_FAILURE = 'FETCH_WEATHER_DATA_FAILURE';
 
 const fetchingWeatherDataAction = () => {
   return {
-    type: FETCHING_WEATHER_DATA,
-    payload: 'result_of_simple_action'
+    type: FETCHING_WEATHER_DATA
   }
 };
 const fetchWeatherDataSuccess = (data: any) => {
