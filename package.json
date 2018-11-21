@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sidhujaspreet/react-redux-widget#readme",
   "dependencies": {
     "@types/history": "^4.7.2",
+    "@types/noble": "0.0.37",
     "@types/react-redux": "^6.0.9",
     "@types/react-router": "^4.4.0",
     "@types/react-router-dom": "^4.3.1",

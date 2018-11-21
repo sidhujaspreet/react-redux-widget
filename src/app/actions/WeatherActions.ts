@@ -27,5 +27,5 @@ export function fetchWeatherData(dispatch: any) {
   fetch(corsProxy + url)
       .then(response => response.json())
       .then(json => dispatch(fetchWeatherDataSuccess(json)))
-      .catch(error => fetchWeatherDataFailure(error));
+      .catch(error => dispatch(fetchWeatherDataFailure(error)));
 }

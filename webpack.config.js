@@ -9,7 +9,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].bundle.js'
+    filename: 'js/[name].bundle.js',
+    publicPath: '/'
   },
   devtool: 'source-map',
   resolve: {
@@ -36,6 +37,9 @@ module.exports = {
       }
     
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({template: path.resolve(__dirname, 'src', 'app', 'index.html')}),

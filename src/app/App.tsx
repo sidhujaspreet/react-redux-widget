@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {AllRoutes} from './routes/AllRoutes';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import {connect} from 'react-redux';
 import NavBar from "./components/common/nav-bar/NavBar";
 import './App.scss';
@@ -8,12 +8,12 @@ import './App.scss';
 
 const App = () => {
   return (
-      <Router>
+      <HashRouter>
         <div className="body">
           {NavBar}
           <AllRoutes/>
         </div>
-      </Router>
+      </HashRouter>
   );
 };
 

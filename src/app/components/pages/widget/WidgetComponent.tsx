@@ -25,13 +25,15 @@ class WidgetComponent extends React.Component<any, any> {
               <button type="button" className="get-data-btn btn btn-light" onClick={this.getData}>Get Data</button>
             </div>
             <div className="col-10 render-data">
-              {data.main ? (
-                  <div>
-                    <InfoText infoTitle="Weather description: " infoText={data.weather[0].description}/>
-                    <InfoText infoTitle="Temperature: " infoText={((data.main.temp - 32) / 1.8).toFixed(2)}/>
-                    <InfoText infoTitle="Pressure: " infoText={(data.main.pressure / 1000).toFixed(3)}/>
-                    <InfoText infoTitle="Humidity: " infoText={`${data.main.humidity} %`}/>
-                  </div>) : <p className="container">Click on 'Get Data' button to get data.</p>}
+              {this.props.isFetching ? (<p className="container">Fetching...</p>) : (<div>
+                {data.main ? (
+                    <div>
+                      <InfoText infoTitle="Weather description: " infoText={data.weather[0].description}/>
+                      <InfoText infoTitle="Temperature: " infoText={((data.main.temp - 32) / 1.8).toFixed(2)}/>
+                      <InfoText infoTitle="Pressure: " infoText={(data.main.pressure / 1000).toFixed(3)}/>
+                      <InfoText infoTitle="Humidity: " infoText={`${data.main.humidity} %`}/>
+                    </div>) : <p className="container">Click on 'Get Data' button to get data.</p>}
+              </div>)}
             </div>
           </div>
         </div>

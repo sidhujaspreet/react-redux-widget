@@ -5,7 +5,8 @@ import {fetchWeatherData} from "../../../actions/WeatherActions";
 function mapStateToProps(state: any) {
   return {
     city: state.weather.city,
-    data: state.weather.data
+    data: state.weather.data,
+    isFetching: state.weather.isFetching
   };
 }
 
