@@ -11,3 +11,5 @@ Below are the implementations done in this project -
   6. Webpack
   7. BootStrap
   8. Routing
+  9. Jest
+  10. Enzyme
