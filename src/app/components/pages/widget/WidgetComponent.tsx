@@ -18,6 +18,7 @@ class WidgetComponent extends React.Component<any, any> {
   
   render() {
     const data = this.props.data;
+    const shouldRenderData = data && data.weather[0] && data.main;
     return (
         <div className="container">
           <div className="row">
@@ -26,8 +27,8 @@ class WidgetComponent extends React.Component<any, any> {
             </div>
             <div className="col-10 render-data">
               {this.props.isFetching ? (<p className="container">Fetching...</p>) : (<div>
-                {data.main ? (
-                    <div>
+                {shouldRenderData ? (
+                    <div className="info-text-wrapper">
                       <InfoText infoTitle="Weather description: " infoText={data.weather[0].description}/>
                       <InfoText infoTitle="Temperature: " infoText={((data.main.temp - 32) / 1.8).toFixed(2)}/>
                       <InfoText infoTitle="Pressure: " infoText={(data.main.pressure / 1000).toFixed(3)}/>
