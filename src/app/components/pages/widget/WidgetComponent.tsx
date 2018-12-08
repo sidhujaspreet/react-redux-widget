@@ -18,7 +18,7 @@ class WidgetComponent extends React.Component<any, any> {
   
   render() {
     const data = this.props.data;
-    const shouldRenderData = data && data.weather[0] && data.main;
+    const shouldRenderData = data && data.weather && data.weather[0] && data.main;
     return (
         <div className="container">
           <div className="row">
